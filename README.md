@@ -1,6 +1,9 @@
 # zhihu-fuli
 过滤知乎当前页面的图片，以瀑布流形式展现，如果显示不正常，请使用最新版chrome
 
+#原理说明：
+![从知乎回答中提取美腿美胸照](http://blog.hjk.im/zhihu-fuli.html)
+
 #预览效果
 同样是细腿，为什么有的看起来就很性感？有的就感觉一般呢？秘密到底在哪里？
 <http://www.zhihu.com/question/32680596>
