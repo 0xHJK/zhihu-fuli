@@ -18,7 +18,7 @@ loadImg(offset);
 // Ajax获取资源函数
 function loadImg(offset){
   $.ajax({
-    url: 'http://www.zhihu.com/node/' + nodename,
+    url: 'https://www.zhihu.com/node/' + nodename,
     type: 'POST',
     dataType: 'json',
     data: {
@@ -38,39 +38,9 @@ function loadImg(offset){
       offset += 50;
       loadImg(offset);
     }
-    
+
   });
 }
-// Ajax提交已读函数
-// function postRead(offset){
-//   var length = $(".zm-item-answer").length;
-//   var readArr = '[';
-//   for(var i = offset; i < length - 1; i++){
-//     var answerId = $(".zm-item-answer").eq(i).data("atoken");
-//     var readItem = '["answer",' + answerId + ', "read"],';
-//     readArr += readItem;
-//   }
-//   readArr += '["answer",' + $(".zm-item-answer").eq(length - 1).data("atoken") + ', "read"]]';
-//   $.ajax({
-//     url: 'http://www.zhihu.com/lastread/touch',
-//     type: 'POST',
-//     dataType: 'json',
-//     data: {
-//       items: readArr,
-//       _xsrf: _xsrf
-//     }
-//   })
-//   .complete(function(data){
-//     nowCount ++;
-//     if(nowCount == stepCount){
-//       showImg();
-//     } else {
-//       offset += 50;
-//       loadImg(offset);
-//     }
-//   });
-// }
-
 
 // 显示图像函数
 function showImg(){
@@ -85,4 +55,3 @@ function showImg(){
   }
   $("#img-fuli").html(img);
 }
-
