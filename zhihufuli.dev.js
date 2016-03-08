@@ -1,15 +1,16 @@
-// 获取变量
+(function() {
+  // 获取变量
 var _xsrf = $("input[name='_xsrf']").attr("value"),
     url_token = $("#zh-question-answer-wrap").data("init").params.url_token,
     nodename = $("#zh-question-answer-wrap").data("init").nodename,
     count = $("#zh-question-answer-num").data("num"),
-    stepCount = Math.ceil(count / 50),
+    stepCount = Math.ceil(count / 20),
     nowCount = 0,
     offset = 0;
 
 // 新建节点，隐藏原网页
 $("#zh-question-answer-wrap").empty().hide();
-$("body").append('<div id="img-fuli" style="position:absolute;left: 0; top: 0; width:100%; background:rgba(0,0,0,.8); z-index:100000;-webkit-column-count: 6;-moz-column-count: 6;column-count: 6;-moz-column-gap:0;-webkit-column-gap:0;column-gap:0;padding: 0;"><h1 style="color:#fff;">加载中，请稍后...</h1></div>');
+$("body").append('<div id="img-fuli" style="position:absolute;left: 0; top: 0; width:100%; background:rgba(0,0,0,.8); z-index:100000;-webkit-column-count:4;-moz-column-count:4;column-count:4;-moz-column-gap:0;-webkit-column-gap:0;column-gap:0;padding: 0;"><h1 style="color:#fff;">加载中，请稍后...</h1></div>');
 
 // 主函数
 loadImg(offset);
@@ -18,12 +19,12 @@ loadImg(offset);
 // Ajax获取资源函数
 function loadImg(offset){
   $.ajax({
-    url: 'https://www.zhihu.com/node/' + nodename,
+    url: '//www.zhihu.com/node/' + nodename,
     type: 'POST',
     dataType: 'json',
     data: {
       method: 'next',
-      params: '{"url_token":' + url_token + ',"pagesize":50,"offset":' + offset + '}',
+      params: '{"url_token":' + url_token + ',"pagesize":20,"offset":' + offset + '}',
       _xsrf: _xsrf
     }
   })
@@ -35,7 +36,7 @@ function loadImg(offset){
     if(nowCount == stepCount){
       showImg();
     } else {
-      offset += 50;
+      offset += 20;
       loadImg(offset);
     }
 
@@ -55,3 +56,5 @@ function showImg(){
   }
   $("#img-fuli").html(img);
 }
+
+})()
