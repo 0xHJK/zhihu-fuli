@@ -7,7 +7,7 @@
 #使用方式
 - 打开知乎的问题页面，比如<http://www.zhihu.com/question/24214727>
 - 按下F12（Mac系统快捷键好像不同，可以右击页面审查元素）打开console
-- 输入`$.get('http://rawgit.com/0xHJK/zhihu-fuli/master/zhihucsp.js.png',function(res){eval(res)})`
+- 输入`$.get('http://rawgit.com/0xHJK/zhihu-fuli/master/zhihufuli.js.png',function(res){eval(res)})`
 - 如果提示错误，则把zhihufuli.min.js里面的代码复制到console里面执行
 ![使用方式](./preview/option.png)
 - 如果答题用户未匿名，点击图片跳转到答题用户主页，如果匿名将显示大图
