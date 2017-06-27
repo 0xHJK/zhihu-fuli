@@ -1,18 +1,13 @@
 # zhihu-fuli
 过滤知乎当前页面的图片，以瀑布流形式展现，如果显示不正常，请使用最新版chrome
 
-如果需要批量下载图片请看这里<https://github.com/0xHJK/pybox/tree/master/zhihu>
-
-## 原理说明：
-<http://blog.hjk.im/zhihu-fuli.html>
+由于知乎改版，原来的代码已经失效，感谢[@bumaociyuan](https://github.com/bumaociyuan)提供的代码
 
 ## 使用方式
 - 打开知乎的问题页面，比如<http://www.zhihu.com/question/24214727>
 - 按下F12（Mac 为CMD+option+i，或者右击审查元素）打开console
-- 输入`$.get('http://rawgit.com/0xHJK/zhihu-fuli/master/zhihufuli.js.png',function(res){eval(res)})`
-- 如果提示错误，则把zhihufuli.min.js里面的代码复制到console里面执行
+- 把<https://gist.github.com/bumaociyuan/32dee0929c68dd8933c25a153eccb5c2>里的代码复制到console里执行
 ![使用方式](./preview/option.png)
-- 如果答题用户未匿名，点击图片跳转到答题用户主页，如果匿名将显示大图
 - 图片较多的话请耐心等待，如果页面出现异常请使用最新版Chrome
 
 ## 预览效果
